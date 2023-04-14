@@ -33,7 +33,7 @@ const AppUI = () => {
         {loading && <div className='loader'></div>}
         {(!loading && !searchedTodos.length) && 
             <div className='crear'>
-                <p>Crea tu primer TODO</p>
+                <p>Crea tu primer Tarea</p>
             </div>}
 
 
