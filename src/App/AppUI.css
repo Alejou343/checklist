@@ -1,0 +1,45 @@
+.crear {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.crear p {
+    padding: 10px;
+    background-color: #61DAFA;
+    color: #0c5460;
+    border: 2px solid #bee5eb;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    font-weight: bolder;
+}
+
+.loader {
+    margin: 0 auto;
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+
+.loader::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    top: 200%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid #ccc;
+    border-top-color: #61DAFA;
+    animation: loader-animation 1s infinite linear;
+}
+
+@keyframes loader-animation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

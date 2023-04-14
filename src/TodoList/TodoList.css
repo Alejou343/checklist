@@ -1,0 +1,7 @@
+ul {
+    margin: 0;
+    padding: 0 0 56px 0;
+    list-style: none;
+}
+
+/* Estilos para la lista de elementos, eliminación de margenes y añadir separación en la parte inferior */

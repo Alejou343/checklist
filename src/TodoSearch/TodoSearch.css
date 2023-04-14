@@ -1,0 +1,30 @@
+.TodoSearch {
+    background: #F9FBFC;
+    border-radius: 2px;
+    border: 2px solid #202329;
+    margin: 0 24px;
+    height: 64px;
+    width: calc(100% - 62px);
+    font-size: 24px;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    color: #1E1E1F;
+    box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
+}
+
+/* Estilizado del input de busqueda, posicionamiento, bordes, colores, márgenes, tamaño y tipo de letra, estilos del recuadro */
+
+.TodoSearch::placeholder {
+    color: #A5A5A5;
+    font-family: 'Montserrat';
+    font-weight: 400;
+}
+
+/* Estilos para lo que se escriba en su interior, color, tamaño y tipo de letra */
+
+.TodoSearch:focus {
+    outline-color: #61DAFA;
+}
+
+/* Transformación para el recuadro cuando se esté dentro de el */

@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@900&family=Poppins:ital,wght@1,900&display=swap');
+
+.TodoItem {
+    background-color: #FAFAFA;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
+}
+
+/* Coloca fondo blanco, posiciona, y realiza flex en sus elementos hijos
+centra horizontal y verticalmente, añade sombras y margenes */
+
+.TodoItem-p {
+    margin: 24px 0 24px 24px;
+    width: calc(100% - 120px);
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+/* Coloca margénes al texto, separa el contenido del contenedor, 
+cambia tamaño y grosor de letra */
+
+.TodoItem-p--complete {
+    text-decoration: line-through;
+}
+
+/*Clase para cuando la tarea está completada: Tacha el texto!!*/
+
+.Icon {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    width: 48px;
+    font-size: 24px;
+    font-weight: bold;
+    /* background-color: #CCC; */
+}
+
+/*Estilos para los logos de check y delete, tamaño, grosor y posicionamiento*/
+
+.Icon-check {
+    position: absolute;
+    left: 12px;
+}
+
+.checkImg {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.checkImgCompleted {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: deepskyblue;
+}
+
+/*Posicionamiento del ícono de check*/
+
+.Icon-check--active {
+    color: #4caf50;
+}
+
+/*Clase que se añade cuando se completa la tarea, cambia el color del ícono check*/
+
+.Icon-delete {
+    position: absolute;
+    top: -24px;
+    right: 0;
+}
+
+/* Posicionamiento el ícono delete */
+
+.Icon-delete:hover {
+    color: red;
+}
+
+/* Cambio de estilos al dar click sobre el ícono de Delete */
