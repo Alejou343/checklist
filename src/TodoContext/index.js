@@ -36,9 +36,6 @@ function TodoProvider(props) {
         const todoIndex = todos.findIndex(x => x.text === text)
         const newTodos = [...todos]
         newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
-        // const stringifiedTodos = JSON.stringify(newTodos);
-        // localStorage.setItem(itemName, stringifiedTodos);
-        // setTodos(newTodos);
         saveTodos(newTodos);
     }
 
@@ -46,22 +43,8 @@ function TodoProvider(props) {
         const todoIndex = todos.findIndex(x => x.text === text)
         const newTodos = [...todos]
         newTodos.splice(todoIndex, 1)
-        // const stringifiedTodos = JSON.stringify(newTodos);
-        // localStorage.setItem(itemName, stringifiedTodos);
-        // setTodos(newTodos);
         saveTodos(newTodos);
     } 
-
-    // console.log('before')
-
-    // React.useEffect(() => {
-    //   console.log('use effect')
-    // }, [completedTodos]); // --> Cuando haya cambios en la variable del segundo argumento, se renderizará la función del useEffect
-
-    // console.log('after')
-
-    // Orden de ejecución 1. 'before' 2. after 3. useEffect (Este solo se renderiza cuando se modifica el valor de completedTodos)
-
 
     return (
         <todoContext.Provider value={{
