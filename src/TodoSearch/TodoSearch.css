@@ -1,3 +1,5 @@
+@import '../vars.css';
+
 .TodoSearch {
     background: #F9FBFC;
     border-radius: 2px;
@@ -24,7 +26,7 @@
 /* Estilos para lo que se escriba en su interior, color, tamaño y tipo de letra */
 
 .TodoSearch:focus {
-    outline-color: #61DAFA;
+    outline-color: var(--tema);
 }
 
 /* Transformación para el recuadro cuando se esté dentro de el */
