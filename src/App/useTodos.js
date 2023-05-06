@@ -1,11 +1,13 @@
 import React from 'react';
 import { useLocalStorage } from './useLocalStorage';
 
-const todoContext = React.createContext();
+// En este archivo se administra toda lógica del programa, respuesta a eventos
+// Se retorna todas las variables, estados y funciones necesarias para 
+// la ejecución de la aplicación
 
-function TodoProvider(props) {
+function useTodos() {
 
-    const {item: todos, saveItem: saveTodos, loading, error} = useLocalStorage('TODOS_V902', []);
+    const {item: todos, saveItem: saveTodos, loading, error, sincronizeItem: sincronizeTodos} = useLocalStorage('TODOS_V902', []);
     const [searchValue, setSearchValue] = React.useState('');
     const [openModal, setOpenModal] = React.useState(false);
 
@@ -47,23 +49,22 @@ function TodoProvider(props) {
     } 
 
     return (
-        <todoContext.Provider value={{
-            loading,
+        {
             error,
+            loading,
+            searchedTodos,
+            openModal,
             completedTodos,
             totalTodos,
             searchValue,
-            setSearchValue,
-            searchedTodos,
-            addTodo,
             completeTodos,
             deleteTodos,
-            openModal,
-            setOpenModal
-        }}>
-            {props.children}
-        </todoContext.Provider>
+            setOpenModal,
+            setSearchValue,
+            addTodo,
+            sincronizeTodos
+        }
     )
 }
 
-export {todoContext, TodoProvider};
+export { useTodos };

@@ -30,3 +30,7 @@
 }
 
 /* Transformación para el recuadro cuando se esté dentro de el */
+
+.TodoSearch:disabled {
+    opacity: 25%;
+}
