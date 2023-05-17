@@ -18,6 +18,14 @@ const TodoItem = (props) => {
             {props.texto}
         </p>
         <span
+            className="Icon Icon-edit"
+        >
+            <img src="https://img.icons8.com/?size=512&id=86376&format=png" 
+                alt="edit.png"
+                className='checkImg' 
+                onClick = {props.onEdit}/>
+        </span>
+        <span
             className="Icon Icon-delete"
         >
             <img src="https://cdn-icons-png.flaticon.com/128/9055/9055094.png" 

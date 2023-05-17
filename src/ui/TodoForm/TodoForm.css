@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import '../vars.css';
+@import '../../vars.css';
 
 form {
     width: 90%;
     max-width: 300px;
+    margin: 0 auto;
     background-color: #fff;
     padding: 33px 40px;
     display: flex;

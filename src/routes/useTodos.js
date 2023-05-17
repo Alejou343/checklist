@@ -7,7 +7,7 @@ import { useLocalStorage } from './useLocalStorage';
 
 function useTodos() {
 
-    const {item: todos, saveItem: saveTodos, loading, error, sincronizeItem: sincronizeTodos} = useLocalStorage('TODOS_V902', []);
+    const {item: todos, saveItem: saveTodos, loading, error, sincronizeItem: sincronizeTodos} = useLocalStorage('TODOS_V92', []);
     const [searchValue, setSearchValue] = React.useState('');
     const [openModal, setOpenModal] = React.useState(false);
 
@@ -28,43 +28,58 @@ function useTodos() {
     }
 
     const addTodo = (text) => {
-
+        const id = newTodoId();
         const newTodos = [...todos]
-        newTodos.push({completed: false, text,})
+        newTodos.push({completed: false, text, id})
         saveTodos(newTodos);
     }
 
-    const completeTodos = (text) => {
-        const todoIndex = todos.findIndex(x => x.text === text)
+    const completeTodos = (id) => {
+        const todoIndex = todos.findIndex(x => x.id === id)
         const newTodos = [...todos]
         newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
         saveTodos(newTodos);
     }
 
-    const deleteTodos = (text) => {
-        const todoIndex = todos.findIndex(x => x.text === text)
+    const editTodo = (id, newText) => {
+        const todoIndex = todos.findIndex(x => x.id === id)
+        const newTodos = [...todos]
+        newTodos[todoIndex].text = newText;
+        saveTodos(newTodos);
+    }
+
+    const deleteTodos = (id) => {
+        const todoIndex = todos.findIndex(x => x.id === id)
         const newTodos = [...todos]
         newTodos.splice(todoIndex, 1)
         saveTodos(newTodos);
     } 
 
-    return (
-        {
-            error,
-            loading,
-            searchedTodos,
-            openModal,
-            completedTodos,
-            totalTodos,
-            searchValue,
-            completeTodos,
-            deleteTodos,
-            setOpenModal,
-            setSearchValue,
-            addTodo,
-            sincronizeTodos
-        }
-    )
+    const state = {          
+        error,
+        loading,
+        searchedTodos,
+        openModal,
+        completedTodos,
+        totalTodos,
+        searchValue
+    }
+
+    const updateState = {
+        setOpenModal,
+        addTodo,
+        editTodo,
+        deleteTodos,
+        completeTodos,
+        setSearchValue,
+        sincronizeTodos
+    }
+
+    return { state, updateState }
+}
+
+function newTodoId() {
+    return Date.now()
 }
 
 export { useTodos };

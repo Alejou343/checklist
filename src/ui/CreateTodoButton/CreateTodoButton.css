@@ -1,4 +1,4 @@
-@import '../vars.css';
+@import '../../vars.css';
 
 .CreateTodoButton {
     background-color: var(--tema);

@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@900&family=Poppins:ital,wght@1,900&display=swap');
-@import '../vars.css';
+@import '../../vars.css';
 
 .TodoItem {
     background-color: #FAFAFA;
@@ -76,6 +76,13 @@ cambia tamaño y grosor de letra */
     top: -24px;
     right: 0;
 }
+
+.Icon-edit {
+    position: absolute;
+    top: -24px; 
+    right: 36px;
+}
+
 
 /* Posicionamiento el ícono delete */
 
