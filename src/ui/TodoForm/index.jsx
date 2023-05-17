@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 
 const TodoForm = (props) => {
 
-    const [newTodoValue, setNewTodoValue] = React.useState('')
     const navigate = useNavigate();
+    const [newTodoValue, setNewTodoValue] = React.useState(props.editText ||'');
 
     const onCancel = () => {
         navigate('/')
@@ -17,8 +17,8 @@ const TodoForm = (props) => {
 
     const onSubmit = (event) => {
         event.preventDefault();
-        navigate('/')
         props.submitEvent(newTodoValue)
+        navigate('/')
     }
 
     return (
@@ -27,7 +27,7 @@ const TodoForm = (props) => {
             <textarea 
             value = {newTodoValue}
             onChange= {onChange}
-            placeholder = 'Cortar la cebolla para el almuerzo'
+            placeholder = 'Escribe aquí tu nuevo TODO'
             />
             <div className='TodoForm-buttonContainer'>
                 <button 

@@ -22,7 +22,7 @@ function HomePage() {
     const { state, updateState } = useTodos();
     const navigate = useNavigate();
 
-    const {    
+    const {   
     error,
     loading,
     searchedTodos,
@@ -72,7 +72,7 @@ function HomePage() {
             texto = {x.text} 
             completed = {x.completed}
             onComplete = {() => completeTodos(x.id)} 
-            onEdit = {() => navigate(`/edit/${x.id}`)}
+            onEdit = {() => navigate(`/edit/${x.id}`, { state: x })}
             onDelete = {() => deleteTodos(x.id)}
         />
         )}

@@ -1,5 +1,5 @@
 {
-  "name": "checklist",
+  "name": "intro-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -41,5 +41,5 @@
   "devDependencies": {
     "gh-pages": "^5.0.0"
   },
-  "homepage": "https://alejou343.github.io/checklist"
+  "homepage": "https://alejou343.github.io/intro-react"
 }
